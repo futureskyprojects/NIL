@@ -123,6 +123,23 @@ namespace SecureMail.WorkSpace
             TimerCheckInbox.Tick += new EventHandler(CheckNewMailINBOX);
             TimerCheckInbox.Start();
             #endregion
+            MailShowArea.MouseWheel += new MouseEventHandler(MailShowArea_MouseWheel);
+        }
+
+        private void MailShowArea_MouseWheel(object sender, MouseEventArgs e)
+        {
+            Control control = sender as Control;
+            if (MailShowArea.VerticalScroll.Visible)
+            {
+//                int numberOfTextLinesToMove = e.Delta * SystemInformation.MouseWheelScrollLines;
+                int numberOfPixelsToMove = 10;//numberOfTextLinesToMove * Convert.ToInt32(control.Font.Size);
+                if (MailShowArea.VerticalScroll.Value - numberOfPixelsToMove < MailShowArea.VerticalScroll.Minimum)
+                    MailShowArea.VerticalScroll.Value = MailShowArea.VerticalScroll.Minimum;
+                else if (MailShowArea.VerticalScroll.Value - numberOfPixelsToMove > MailShowArea.VerticalScroll.Maximum)
+                    MailShowArea.VerticalScroll.Value = MailShowArea.VerticalScroll.Maximum;
+                else
+                    MailShowArea.VerticalScroll.Value -= numberOfPixelsToMove;
+            }
         }
 
         private void Close_BT_Click(object sender, EventArgs e)

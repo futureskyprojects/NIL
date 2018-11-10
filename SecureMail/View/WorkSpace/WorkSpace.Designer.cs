@@ -31,9 +31,9 @@ namespace SecureMail.WorkSpace
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation7 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkSpace));
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation8 = new BunifuAnimatorNS.Animation();
             this.WorkSpaceRadius = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.UserName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.Header = new System.Windows.Forms.Panel();
@@ -90,14 +90,15 @@ namespace SecureMail.WorkSpace
             this._DRAFTS = new Bunifu.Framework.UI.BunifuFlatButton();
             this._SENT = new Bunifu.Framework.UI.BunifuFlatButton();
             this.INBOX = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.Fr = new SecureMail.WorkSpace.ForwardS();
             this.WorkPlace = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.ShowWork = new System.Windows.Forms.FlowLayoutPanel();
             this.LoadMailShowPicture = new System.Windows.Forms.PictureBox();
+            this.Fr = new SecureMail.WorkSpace.ForwardS();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.DropdownShow = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.DragX = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Sending_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
@@ -134,6 +135,7 @@ namespace SecureMail.WorkSpace
             // UserName
             // 
             this.UserName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UserName.BackColor = System.Drawing.Color.Transparent;
             this.WorkSpaceStartTransition.SetDecoration(this.UserName, BunifuAnimatorNS.DecorationType.None);
             this.DropdownShow.SetDecoration(this.UserName, BunifuAnimatorNS.DecorationType.None);
             this.UserName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -809,22 +811,22 @@ namespace SecureMail.WorkSpace
             // 
             this.WorkSpaceStartTransition.AnimationType = BunifuAnimatorNS.AnimationType.Scale;
             this.WorkSpaceStartTransition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.WorkSpaceStartTransition.DefaultAnimation = animation1;
+            animation7.AnimateOnlyDifferences = true;
+            animation7.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.BlindCoeff")));
+            animation7.LeafCoeff = 0F;
+            animation7.MaxTime = 1F;
+            animation7.MinTime = 0F;
+            animation7.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicCoeff")));
+            animation7.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicShift")));
+            animation7.MosaicSize = 0;
+            animation7.Padding = new System.Windows.Forms.Padding(0);
+            animation7.RotateCoeff = 0F;
+            animation7.RotateLimit = 0F;
+            animation7.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.ScaleCoeff")));
+            animation7.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.SlideCoeff")));
+            animation7.TimeCoeff = 0F;
+            animation7.TransparencyCoeff = 0F;
+            this.WorkSpaceStartTransition.DefaultAnimation = animation7;
             this.WorkSpaceStartTransition.TimeStep = 0.009F;
             // 
             // OptionsBox
@@ -1018,16 +1020,6 @@ namespace SecureMail.WorkSpace
             this.INBOX.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INBOX.Click += new System.EventHandler(this.INBOX_Click);
             // 
-            // Fr
-            // 
-            this.Fr.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.WorkSpaceStartTransition.SetDecoration(this.Fr, BunifuAnimatorNS.DecorationType.None);
-            this.DropdownShow.SetDecoration(this.Fr, BunifuAnimatorNS.DecorationType.None);
-            this.Fr.Location = new System.Drawing.Point(588, 88);
-            this.Fr.Name = "Fr";
-            this.Fr.Size = new System.Drawing.Size(0, 0);
-            this.Fr.TabIndex = 9;
-            // 
             // WorkPlace
             // 
             this.WorkPlace.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("WorkPlace.BackgroundImage")));
@@ -1070,6 +1062,16 @@ namespace SecureMail.WorkSpace
             this.LoadMailShowPicture.TabIndex = 7;
             this.LoadMailShowPicture.TabStop = false;
             // 
+            // Fr
+            // 
+            this.Fr.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.WorkSpaceStartTransition.SetDecoration(this.Fr, BunifuAnimatorNS.DecorationType.None);
+            this.DropdownShow.SetDecoration(this.Fr, BunifuAnimatorNS.DecorationType.None);
+            this.Fr.Location = new System.Drawing.Point(588, 88);
+            this.Fr.Name = "Fr";
+            this.Fr.Size = new System.Drawing.Size(0, 0);
+            this.Fr.TabIndex = 9;
+            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
@@ -1079,22 +1081,22 @@ namespace SecureMail.WorkSpace
             // 
             this.DropdownShow.AnimationType = BunifuAnimatorNS.AnimationType.VertBlind;
             this.DropdownShow.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.DropdownShow.DefaultAnimation = animation2;
+            animation8.AnimateOnlyDifferences = true;
+            animation8.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.BlindCoeff")));
+            animation8.LeafCoeff = 0F;
+            animation8.MaxTime = 1F;
+            animation8.MinTime = 0F;
+            animation8.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicCoeff")));
+            animation8.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicShift")));
+            animation8.MosaicSize = 0;
+            animation8.Padding = new System.Windows.Forms.Padding(0);
+            animation8.RotateCoeff = 0F;
+            animation8.RotateLimit = 0F;
+            animation8.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.ScaleCoeff")));
+            animation8.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.SlideCoeff")));
+            animation8.TimeCoeff = 0F;
+            animation8.TransparencyCoeff = 0F;
+            this.DropdownShow.DefaultAnimation = animation8;
             // 
             // bunifuDragControl1
             // 
@@ -1107,6 +1109,13 @@ namespace SecureMail.WorkSpace
             // 
             this.bunifuElipse2.ElipseRadius = 15;
             this.bunifuElipse2.TargetControl = this.SearchBox;
+            // 
+            // DragX
+            // 
+            this.DragX.Fixed = false;
+            this.DragX.Horizontal = true;
+            this.DragX.TargetControl = this.UserName;
+            this.DragX.Vertical = true;
             // 
             // WorkSpace
             // 
@@ -1230,5 +1239,6 @@ namespace SecureMail.WorkSpace
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuMetroTextbox SearchBox;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuDragControl DragX;
     }
 }
